@@ -72,3 +72,13 @@ app.use('/graphql', expressGraphQL((req,res) => ({
         user: req.user
     }
 })))
+
+app.post('/register', jsonParser, (req,res)=> {
+    var user = new User(req.body);
+
+    user.save((err)=>{
+        if(err) throw err;
+        res.send('Usuario Registrado');
+
+    })
+})
