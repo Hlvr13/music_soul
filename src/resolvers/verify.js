@@ -9,7 +9,7 @@ export const verifyToken = (token) => {
 
     let user = null;
 
-    if(!payload){throw new Error('No token provided. Please verify your permissions')} // No token in Header
+    if(!payload){throw new Error('No token provided.')} // No token in Header
     
     if(prefix !== prefixToken){throw new Error('Invalid Header format.')}
 
