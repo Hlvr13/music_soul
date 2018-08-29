@@ -45,7 +45,17 @@ const userSchema = new Schema({
         required: false,
         default: ''
     },
-    'url':{
+    'urlYT':{
+        type: String,
+        required: false,
+        default: ''
+    },
+    'urlTW':{
+        type: String,
+        required: false,
+        default: ''
+    },
+    'urlFB':{
         type: String,
         required: false,
         default: ''

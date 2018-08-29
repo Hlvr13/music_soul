@@ -41,7 +41,13 @@ export const UserType = new graphql.GraphQLObjectType({
         photo:{
             type: graphql.GraphQLString
         },
-        url:{
+        urlYT:{
+            type: graphql.GraphQLString
+        },
+        urlTW:{
+            type: graphql.GraphQLString
+        },
+        urlFB:{
             type: graphql.GraphQLString
         }
     })
@@ -78,7 +84,13 @@ export const UserInputType = new graphql.GraphQLInputObjectType({
         photo:{
             type: graphql.GraphQLString
         },
-        url:{
+        urlYT:{
+            type: graphql.GraphQLString
+        },
+        urlTW:{
+            type: graphql.GraphQLString
+        },
+        urlFB:{
             type: graphql.GraphQLString
         }
     })
