@@ -12,7 +12,7 @@ export default{
     },
     resolve(root,params){
         const deleteInstrument = Instrument.findByIdAndRemove(params.id);
-        if(!deleteInstrument) throw Error('Error at deletinf Instrument');
+        if(!deleteInstrument) throw Error('Error at deleting Instrument');
         return deleteInstrument;
     }
 }
