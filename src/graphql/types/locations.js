@@ -7,14 +7,14 @@ export const LocationType = new graphql.GraphQLObjectType({
         _id: {
             type: graphql.GraphQLNonNull(graphql.GraphQLID)
         },
-        Country: {
-            type: graphql.GraphQlString
+        country: {
+            type: graphql.GraphQLString
         },
-        State: {
-            type: graphql.GraphQlString
+        state: {
+            type: graphql.GraphQLString
         },
-        City: {
-            type: graphql.GraphQlString
+        city: {
+            type: graphql.GraphQLString
         }
     })
 })
@@ -23,13 +23,13 @@ export const LocationInputType = new graphql.GraphQLInputObjectType({
     name: 'LocationInputType',
     description: 'LocationInputType in GraphQL',
     fields: () => ({
-        Country: {
+        country: {
             type: graphql.GraphQLString
         },
-        State: {
+        state: {
             type: graphql.GraphQLString
         },
-        City: {
+        city: {
             type: graphql.GraphQLString
         }
     })
