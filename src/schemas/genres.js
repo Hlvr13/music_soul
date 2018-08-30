@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const GenreSchema = new Schema ({
 
-    'Name': {
+    name: {
         type:String,
         require:true
     },
-    'Description': {
+    description: {
         type:String,
         require:true
     }

@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 
 const LocationSchema = new Schema ({
 
-    'Country': {
+    country: {
         type: 'String',
         require: true
     },
-    'State': {
+    state: {
         type:String,
         require: true
     },
-    'City': {
+    city: {
         type: String,
         require: true
     }
