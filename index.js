@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import expressGraphQL from 'express-graphql';
 import bodyParser from 'body-parser';
-import schema from './src/graphql';
+import graphQLSchema from './src/graphql';
+import graphQLSchemaOnlyQueries from './src/graphql_only_queries';
 import { verifyToken } from './src/resolvers/verify';
 import { createToken } from './src/resolvers/create';
 
@@ -65,7 +66,7 @@ app.use('/graphql', (req,res,next) => {
 
 //Uso de graphiql para utilizar queries y mutations//
 app.use('/graphql', expressGraphQL((req,res) => ({
-    schema,      //Es necesario que se llame 'schema', no se puede nombrar diferente debido a que causa error.
+    schema:graphQLSchema,      //Es necesario que se llame 'schema', no se puede nombrar diferente debido a que causa error.
     graphiql: true,
     pretty: true,
     context:{
@@ -82,3 +83,13 @@ app.post('/register', jsonParser, (req,res)=> {
 
     })
 })
+
+app.use('/graphql_Only_Queries', expressGraphQL((req,res) => ({
+    schema:graphQLSchemaOnlyQueries,      //Es necesario que se llame 'schema', no se puede nombrar diferente debido a que causa error.
+    graphiql: true,
+    pretty: true,
+    context:{
+        user: req.user
+    }
+})))
+
